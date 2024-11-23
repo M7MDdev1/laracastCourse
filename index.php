@@ -6,8 +6,18 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>Welcome to this recommendation System</h1>
     <?php 
-    echo "Hello World";
+    $Books = [
+        "Atomic Habits",
+        "Rich dad, Poor dad",
+        "GitPro"
+    ]
     ?>
+    <ul>
+         <?php foreach($Books as $Book) : ?>
+         <li><?= $Book ?></li>
+         <?php endforeach ?>
+    </ul>
 </body>
 </html>
