@@ -9,14 +9,23 @@
     <h1>Welcome to this recommendation System</h1>
     <?php 
     $Books = [
-        "Atomic Habits",
-        "Rich dad, Poor dad",
-        "GitPro"
+        [
+            "author"=>"Robert Kiosaki",
+            "name"=>"Rich dad, Poor dad",
+            "purchaseURL"=>"https://a.co/d/a2WQfR5"
+         ],     
+         [
+            "author"=>"James Clear",
+            "name"=>"Atomic Habits",
+            "purchaseURL"=>"https://a.co/d/arWBEZt"
+         ],
     ]
     ?>
     <ul>
          <?php foreach($Books as $Book) : ?>
-         <li><?= $Book ?></li>
+            <a href="<?= $Book['purchaseURL'] ?>">
+            <li><?= $Book['name'] ?></li>
+            </a>
          <?php endforeach ?>
     </ul>
 </body>
