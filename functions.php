@@ -1,0 +1,5 @@
+<?php
+
+function isURL($value){
+    return $_SERVER['REQUEST_URI'] === $value;
+}
