@@ -5,9 +5,12 @@ require "functions.php";
 // require "router.php";
 require "Database.php";
 
-$db = new Database();
 
-$posts = $db->Query('SELECT * FROM Posts')->fetchAll(PDO::FETCH_ASSOC);
+$config = require('config.php');
+
+$db = new Database($config['database']);
+
+$posts = $db->Query('SELECT * FROM Posts')->fetchAll();
 
 
 foreach($posts as $post){
