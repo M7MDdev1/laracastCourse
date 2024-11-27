@@ -14,10 +14,10 @@ class Database{
         PDO::ATTR_DEFAULT_FETCH_MODE=> PDO::FETCH_ASSOC
      ]);
     }
-    public function Query($Query){
+    public function Query($Query,$params = []){
 
         $statement = $this->connection->prepare($Query);
-        $statement->execute();
+        $statement->execute($params);
         return $statement;
         
     }
