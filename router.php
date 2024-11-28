@@ -17,7 +17,7 @@ $Routes = [
 
 function abort($Code = 404){
     http_response_code($Code);
-    require 'Controllers/NotFound.php';
+    require "Controllers/$Code.php";
     die();
 }
 
