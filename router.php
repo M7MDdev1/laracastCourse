@@ -1,6 +1,5 @@
 <?php 
 
-require "Database.php";
 
 
 $URL = parse_url($_SERVER['REQUEST_URI'])['path'];

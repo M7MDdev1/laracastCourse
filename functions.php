@@ -13,3 +13,9 @@ function dd($value){
     echo "</pre>";
     die();
 }
+
+function authorize($condition,$status = 403){
+    if(!$condition){
+        abort($status);
+    }
+}

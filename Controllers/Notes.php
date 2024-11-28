@@ -2,13 +2,9 @@
 
 $Name = "Notes";
 
-$config = require('config.php');
+$CurrentUser = 1;
 
-$db = new Database($config['database']);
-
-$CurrentUser = 3;
-
-$posts = $db->Query("SELECT * FROM Posts where userID = :id",["id"=>$CurrentUser])->fetchAll();
+$posts = $db->Query("SELECT * FROM Posts where userID = :id",["id"=>$CurrentUser])->get();
 
 // dd($posts);
 
