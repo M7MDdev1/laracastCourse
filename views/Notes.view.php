@@ -9,10 +9,13 @@
       <ul class="list-disc">
       <?php foreach ($posts as $post) : ?>
         <a href="/Note?id=<?= $post['id']?>">
-          <li><?= $post['title']?></li>
+          <li><?= htmlspecialchars($post['title']) ?></li>
         </a>
         <?php endforeach ?>
     </ul>
+
+
+    <a href="/Notes/Create" class="text-blue-500 block mt-11 ">Create a Note !</a>
     </div>
 
 
