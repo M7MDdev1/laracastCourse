@@ -1,7 +1,7 @@
-<?php require "Partials/Header.php" ?>
- <?php require "Partials/nav.php" ?>
+<?php require "views/Partials/Header.php" ?>
+ <?php require "views/Partials/nav.php" ?>
 
- <?php require "Partials/Title.php" ?>
+ <?php require "views/Partials/Title.php" ?>
 
     <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 ">
 
@@ -19,4 +19,4 @@
     
 
   
-  <?php require "Partials/Foot.php" ?>
+    <?php require "views/Partials/Foot.php" ?>

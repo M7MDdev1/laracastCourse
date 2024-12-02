@@ -12,4 +12,4 @@ $CurrentUser = 1;
 
 authorize($post['UserID'] === $CurrentUser);
 
-require "views/MyNote.view.php";
+require "views/notes/show.view.php";

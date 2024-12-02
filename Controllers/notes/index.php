@@ -8,4 +8,4 @@ $posts = $db->Query("SELECT * FROM Posts where userID = :id",["id"=>$CurrentUser
 
 // dd($posts);
 
-require "views/Notes.view.php";
+require "views/notes/index.view.php";
