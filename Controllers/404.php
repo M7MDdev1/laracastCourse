@@ -1,4 +1,5 @@
 <?php
 
-    $Name = "Not Found !";
-    require "views/NotFound.view.php";
+view("NotFound.view.php",[
+    'Name' => "Not Found"
+]);

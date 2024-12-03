@@ -1,4 +1,5 @@
 <?php
 
-    $Name = "About Us";
-    require "views/About.view.php";
+view("About.view.php",[
+    'Name' => "About Us"
+]);

@@ -3,14 +3,16 @@
 
 $Name = "Create Note";
 
-require "Validator.php";
+require base_path("Validator.php");
 
 $CurrentUser = 1;
+
+$error = null;
+
 
 if($_SERVER['REQUEST_METHOD'] === "POST")
 {
 
-    $error = null;
 
 
     if(!Validator::string($_POST['title'],7,1000)){
@@ -31,5 +33,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST")
 }
 
 
-
-require "views/notes/create.view.php";
+view("notes/create.view.php", [
+    'Name' => 'Create Note',
+    'error' => $error
+]);
