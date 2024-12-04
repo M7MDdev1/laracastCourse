@@ -1,11 +1,12 @@
 <?php 
 
+
 const BASE_PATH = __DIR__ . '/../';
 
 
-require BASE_PATH  . "functions.php";
+require BASE_PATH  . "Core/" ."functions.php";
 
 
-require base_path("db.manager.php");
+require base_path("Core/db.manager.php");
 
-require base_path("router.php");
+require base_path("Core/router.php");

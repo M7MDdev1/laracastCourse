@@ -1,9 +1,10 @@
 <?php
 
+use Core\Validator;
 
 $Name = "Create Note";
 
-require base_path("Validator.php");
+require base_path("Core/Validator.php");
 
 $CurrentUser = 1;
 

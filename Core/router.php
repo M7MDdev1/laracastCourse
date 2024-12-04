@@ -3,7 +3,7 @@
 
 
 
-$Routes = require("Routes.php");
+$Routes = require base_path("Routes.php");
 
 $URL = parse_url($_SERVER['REQUEST_URI'])['path'];
 
@@ -16,7 +16,7 @@ function abort($Code = 404){
 
 
 if(array_key_exists($URL,$Routes)){
-    require $Routes[$URL];
+    require base_path($Routes[$URL]);
 }else{
     abort();
 }
