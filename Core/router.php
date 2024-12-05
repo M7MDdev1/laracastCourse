@@ -10,7 +10,7 @@ $URL = parse_url($_SERVER['REQUEST_URI'])['path'];
 
 function abort($Code = 404){
     http_response_code($Code);
-    require "Controllers/$Code.php";
+    require base_path("Controllers/$Code.php");
     die();
 }
 

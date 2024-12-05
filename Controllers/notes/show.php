@@ -5,12 +5,19 @@ $Name = "My Note";
 
 $post = $db->Query("SELECT * FROM Posts where id = :id",["id"=>$_GET['id']])->findOrFail();
 
-// dd($post['UserID']);
+// dd($_SERVER['REQUEST_METHOD']);
+
 
 $CurrentUser = 1;
 
 
 authorize($post['UserID'] === $CurrentUser);
+
+if($_SERVER['REQUEST_METHOD'] === "POST"){
+    $db->Query(" DELETE FROM Posts WHERE id = :id",["id"=>$_GET['id']]);
+    header("location: /Notes");
+    exit();
+}
 
 view("notes/show.view.php", [
     'Name' => 'Note',

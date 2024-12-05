@@ -7,6 +7,11 @@
       <a href="/Notes?id=2">Go Back ?</a>
 
       <p><?= htmlspecialchars($post['title']) ?></p>
+
+      <form method="post">
+        <input type="hidden" value="<?= $_GET['id'] ?>" name="id">
+        <button class="text-red-500 text-xs mt-3">Delete</button>
+      </form>
     </div>
 
 
