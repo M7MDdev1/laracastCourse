@@ -24,7 +24,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST")
     
 
    if(!isset($error)){
-    $posts = $db->Query("INSERT INTO Posts(title,UserID) values (:title, :UserID)",[
+    $notes = $db->Query("INSERT INTO notes(title,UserID) values (:title, :UserID)",[
         "title"=> $_POST['title'],
         "UserID"=>$CurrentUser
         ])->get();

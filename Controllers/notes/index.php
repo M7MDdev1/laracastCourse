@@ -4,11 +4,11 @@ $Name = "Notes";
 
 $CurrentUser = 1;
 
-$posts = $db->Query("SELECT * FROM Posts where userID = :id",["id"=>$CurrentUser])->get();
+$notes = $db->Query("SELECT * FROM notes where userID = :id",["id"=>$CurrentUser])->get();
 
-// dd($posts);
+// dd($notes);
 
 view("notes/index.view.php", [
     'Name' => 'My Notes',
-    'posts' => $posts
+    'notes' => $notes
 ]);

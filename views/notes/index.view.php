@@ -6,7 +6,7 @@
     <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 ">
 
       <ul class="list-disc">
-      <?php foreach ($posts as $post) : ?>
+      <?php foreach ($notes as $post) : ?>
         <a href="/Note?id=<?= $post['id']?>">
           <li><?= htmlspecialchars($post['title']) ?></li>
         </a>

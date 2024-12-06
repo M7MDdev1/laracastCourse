@@ -3,7 +3,7 @@
 $Name = "My Note";
 
 
-$post = $db->Query("SELECT * FROM Posts where id = :id",["id"=>$_GET['id']])->findOrFail();
+$post = $db->Query("SELECT * FROM notes where id = :id",["id"=>$_GET['id']])->findOrFail();
 
 // dd($_SERVER['REQUEST_METHOD']);
 
@@ -14,7 +14,7 @@ $CurrentUser = 1;
 authorize($post['UserID'] === $CurrentUser);
 
 if($_SERVER['REQUEST_METHOD'] === "POST"){
-    $db->Query(" DELETE FROM Posts WHERE id = :id",["id"=>$_GET['id']]);
+    $db->Query(" DELETE FROM notes WHERE id = :id",["id"=>$_GET['id']]);
     header("location: /Notes");
     exit();
 }
