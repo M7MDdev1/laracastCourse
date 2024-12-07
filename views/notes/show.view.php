@@ -1,20 +1,21 @@
-<?php require base_path("views/Partials/Header.php") ?>
- <?php require base_path("views/Partials/nav.php") ?>
- <?php require base_path("views/Partials/Title.php") ?>
+<?php require base_path('views/partials/head.php') ?>
+<?php require base_path('views/partials/nav.php') ?>
+<?php require base_path('views/partials/banner.php') ?>
 
-  <main>
-    <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 ">
-      <a href="/Notes?id=2">Go Back ?</a>
+<main>
+    <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+        <p class="mb-6">
+            <a href="/notes" class="text-blue-500 underline">go back...</a>
+        </p>
 
-      <p><?= htmlspecialchars($post['title']) ?></p>
+        <p><?= htmlspecialchars($note['title']) ?></p>
 
-      <form method="post">
-        <input type="hidden" value="<?= $_GET['id'] ?>" name="id">
-        <button class="text-red-500 text-xs mt-3">Delete</button>
-      </form>
+        <form class="mt-6" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="hidden" name="id" value="<?= $note['id'] ?>">
+            <button class="text-sm text-red-500">Delete</button>
+        </form>
     </div>
+</main>
 
-
-  </main>
-  
-  <?php require base_path("views/Partials/Foot.php") ?>
+<?php require base_path('views/partials/footer.php') ?>
