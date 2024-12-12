@@ -36,9 +36,17 @@ if ($user) {
         'password' => password_hash($password,PASSWORD_BCRYPT),
         'name'=>$name
     ]);
+
+
+    $id = $db->query('SELECT id FROM users where email = :email' , [
+        'email' => $email,
+    ])->find()['id'];
+
+
     $_SESSION['user'] = [
         'email' => $email,
         'name' => $name,
+        'id' => $id
     ];
     header('location: /');
     exit();

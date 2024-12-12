@@ -18,10 +18,11 @@ if (! empty($errors)) {
         'errors' => $errors
     ]);
 }
+$currentUserId = $_SESSION['user']['id'];
 
 $db->query('INSERT INTO notes(title, UserID) VALUES(:title, :UserID)', [
     'title' => $_POST['title'],
-    'UserID' => 1
+    'UserID' => $currentUserId
 ]);
 
 header('location: /notes');
