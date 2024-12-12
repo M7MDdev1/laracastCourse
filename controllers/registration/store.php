@@ -5,12 +5,19 @@ use Core\Validator;
 $db = App::resolve(Database::class);
 $email = $_POST['email'];
 $password = $_POST['password'];
+$name = $_POST['name'];
 $errors = [];
+
+
+
 if (!Validator::email($email)) {
    $errors['email'] = 'Please provide a valid email address.';
 }
 if (!Validator::string($password, 7, 255)) {
     $errors['password'] = 'Please provide a password of at least seven characters.';
+}
+if (!Validator::string($name, 4, 255)) {
+    $errors['name'] = 'Please provide a name of at least four characters.';
 }
 if (! empty($errors)) {
     return view('registration/create.view.php', [
@@ -24,12 +31,14 @@ if ($user) {
     header('location: /');
     exit();
 } else {
-    $db->query('INSERT INTO users(email, password) VALUES(:email, :password)', [
+    $db->query('INSERT INTO users(email, password, name) VALUES(:email, :password, :name)', [
         'email' => $email,
-        'password' => $password // NEVER store database passwords in clear text. We'll fix this in the login form episode. :)
+        'password' => password_hash($password,PASSWORD_BCRYPT),
+        'name'=>$name
     ]);
     $_SESSION['user'] = [
-        'email' => $email
+        'email' => $email,
+        'name' => $name,
     ];
     header('location: /');
     exit();
