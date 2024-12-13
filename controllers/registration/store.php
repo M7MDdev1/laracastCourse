@@ -43,11 +43,11 @@ if ($user) {
     ])->find()['id'];
 
 
-    $_SESSION['user'] = [
+    $login([
         'email' => $email,
         'name' => $name,
         'id' => $id
-    ];
+    ]);
     header('location: /');
     exit();
 }
