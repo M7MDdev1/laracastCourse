@@ -19,7 +19,7 @@ if (! empty($errors)) {
     ]);
 }
 $currentUserId = $_SESSION['user']['id'];
-// dd($_SESSION);
+
 $db->query('INSERT INTO notes(title, UserID) VALUES(:title, :UserID)', [
     'title' => $_POST['title'],
     'UserID' => $currentUserId
