@@ -14,6 +14,9 @@
                 <label for="title" class="block text-sm/6 font-medium text-gray-900">Title</label>
                 <div class="mt-2">
                   <input type="text" name="title" id="title" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+                @error('title')
+                <p class="text-xs text-red-500 font-semibold">{{$message}}</p>
+                @enderror
                 </div>
               </div>
 
@@ -21,6 +24,9 @@
                 <label for="salary" class="block text-sm/6 font-medium text-gray-900">Salary</label>
                 <div class="mt-2">
                   <input type="text" name="salary" id="salary" autocomplete="family-name" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+                  @error('salary')
+                  <p class="text-xs text-red-500 font-semibold">{{$message}}</p>
+                  @enderror
                 </div>
               </div>
             </div>
