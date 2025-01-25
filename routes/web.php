@@ -6,13 +6,9 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/','Home');
-
-Route::resource('jobs', JobController::class);
-
 Route::view('/Contact','Contact');
 
-Route::get('/register', [UserController::class, 'create']);
-
-Route::post('/register',[UserController::class,'store']);
-Route::get('/login', [sessionController::class, 'index']);
-Route::post('/login',[sessionController::class,'store']);
+Route::resource('jobs', JobController::class);
+Route::resource('register', UserController::class);
+Route::resource('login', sessionController::class);
+Route::post('/logout',[sessionController::class,'destroy']);
