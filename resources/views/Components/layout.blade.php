@@ -20,7 +20,7 @@
             <div class="hidden md:block">
               <div class="ml-10 flex items-baseline space-x-4">
                 <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
-                <x-nav-link href="/Jobs" :active="request()->is('Jobs')">Jobs</x-nav-link>
+                <x-nav-link href="/jobs" :active="request()->is('jobs')">Jobs</x-nav-link>
                 <x-nav-link href="/Contact" :active="request()->is('Contact')">Contact</x-nav-link>
               </div>
             </div>
@@ -99,7 +99,7 @@
     <header class="bg-white shadow">
       <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 flex justify-between">
         <h1 class="text-3xl font-bold tracking-tight text-gray-900">{{$heading}}</h1>
-          <x-button href="/Jobs/create">Create Job</x-button>
+          <x-button href="/jobs/create">Create Job</x-button>
       </div>
     </header>
     <main>
