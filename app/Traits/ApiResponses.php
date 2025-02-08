@@ -12,6 +12,13 @@ trait ApiResponses{
         ], $statusCode);
     }
 
+    protected function error($message, $statusCode = 401) {
+        return response()->json([
+            'message' => $message,
+            'status' => $statusCode
+        ], $statusCode);
+    }
+
     protected function ok($message) {
         return $this->success($message, 200);
     }
