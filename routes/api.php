@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\UsersController;
 use App\Http\Controllers\V1\TicketController;
 use App\Models\Ticket;
 use Illuminate\Support\Facades\Route;
@@ -12,3 +13,4 @@ Route::middleware('auth:sanctum')->post('/logout', [AuthController::class,'logou
 
 
 Route::middleware('auth:sanctum')->apiResource('/tickets', TicketController::class);
+Route::middleware('auth:sanctum')->apiResource('users', UsersController::class);
